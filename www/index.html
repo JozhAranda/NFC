@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/paper/bootstrap.min.css">
+    <style>
+      body {
+        background: #444
+      }
+    </style>
+  </head>
+
+  <body onload="init()">
+    <form class="form">
+      <p>Mime Type:</p>
+      <input type="text" name="mimeType" class="form-control" value="text/pg" size="30" /><br/>
+      <p>Payload:</p>      
+      <textarea name="payload" class="form-control" rows="7">Hello PhoneGap</textarea>
+    </form>
+    <p>Tap an NFC tag to write data.</p>
+
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="cordova.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+    <script src="nfc.js" type="text/javascript" ></script>
+    
+    <!--script type="text/javascript" charset="utf-8">
+
+      document.addEventListener("deviceready",onDeviceReady,false);
+
+      function onDeviceReady() {
+        nfc.addNdefListener(onNfc, success, failure);
+      }
+
+      function onNfc(nfcEvent) {
+        // display the tag as JSON
+        alert(JSON.stringify(nfcEvent.tag));
+      }
+
+      function success(result) {
+        console.log("Listening for NFC Messages");
+      }
+      function failure(reason) {
+        alert("Failed to add NDEF listener");
+      }      
+    </script-->
+  </body>
+</html>
